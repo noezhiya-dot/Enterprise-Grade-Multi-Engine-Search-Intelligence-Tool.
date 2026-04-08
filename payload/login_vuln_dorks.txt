@@ -1,0 +1,97 @@
+# Vulnerable Login Page Dork Queries
+# These dorks help find potentially vulnerable login pages for security testing
+
+# Basic login pages
+intitle:login
+intitle:"log in"
+intitle:signin
+inurl:login
+inurl:/admin/login
+inurl:/user/login
+
+# Common login page patterns
+inurl:login.php
+inurl:admin.php
+inurl:login.asp
+inurl:login.aspx
+inurl:login.jsp
+inurl:authenticate
+
+# Default credentials / weak authentication
+inurl:login AND (intext:"default" OR intext:"password" OR intext:"username")
+intitle:login intext:"Username" intext:"Password"
+
+# Exposed login pages with debugging info
+inurl:login filetype:php
+intitle:login filetype:jsp
+intitle:login filetype:asp
+
+# Backup/test login pages
+inurl:login_backup
+inurl:login_test
+inurl:admin_login
+inurl:test_login
+inurl:login.old
+inurl:login.bak
+
+# Admin panels
+inurl:/admin
+inurl:/administrator
+inurl:/admin/index
+inurl:/admin/login
+inurl:/admin/panel
+
+# Login pages with known CMS
+inurl:wp-login.php
+inurl:wp-admin
+inurl:joomla/administrator
+inurl:drupal/user/login
+inurl:magento/admin
+
+# Development/staging environments
+inurl:dev/login
+inurl:staging/login
+inurl:test/login
+inurl:sandbox/login
+
+# API login endpoints
+inurl:/api/login
+inurl:/api/authenticate
+inurl:/api/auth
+inurl:/oauth/login
+inurl:/v1/login
+
+# Directory listing on login directories
+intitle:"index of" inurl:login
+intitle:"directory listing" inurl:admin
+
+# SQL injection in login
+inurl:login intext:"SQL" OR intext:"error"
+inurl:login intext:"syntax error"
+
+# Forgotten password endpoints
+inurl:forgot
+inurl:password/reset
+inurl:resetpassword
+inurl:recoverpassword
+
+# Form-based login with verbose errors
+inurl:login intext:"incorrect password" OR intext:"user not found"
+
+# Session/token exposure
+inurl:login intext:"session" OR intext:"token"
+
+# Social login implementations (often misconfigured)
+inurl:login intext:"facebook" OR intext:"google" OR intext:"oauth"
+
+# Mobile app login APIs
+inurl:/api/ inurl:login
+inurl:mobile/login
+inurl:app/login
+
+# Weak HTTPS/SSL on login
+site:* inurl:login -https
+
+# Login pages with public registration (sometimes weak)
+inurl:login inurl:register
+inurl:signup inurl:login

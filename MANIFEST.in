@@ -1,0 +1,2 @@
+include = ["dorker"]
+exclude = ["tests", "examples", "*.pyc", "__pycache__"]

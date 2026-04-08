@@ -1,3 +1,41 @@
+Metadata-Version: 2.4
+Name: dorker
+Version: 1.0.0
+Summary: Enterprise-grade tool for performing Google dork queries across multiple search engines
+Author-email: Your Name <your.email@example.com>
+License: MIT
+Project-URL: Homepage, https://github.com/yourusername/dorker
+Project-URL: Documentation, https://github.com/yourusername/dorker#readme
+Project-URL: Repository, https://github.com/yourusername/dorker.git
+Project-URL: Issues, https://github.com/yourusername/dorker/issues
+Keywords: dorking,google-dork,search-engine,scraping,information-gathering
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: Topic :: Security
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: aiohttp>=3.9.0
+Requires-Dist: beautifulsoup4>=4.12.0
+Requires-Dist: duckduckgo-search>=4.0.0
+Requires-Dist: fake-useragent>=1.4.0
+Requires-Dist: rich>=13.0.0
+Requires-Dist: pyyaml>=6.0.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.0; extra == "dev"
+Requires-Dist: pytest-asyncio>=0.21.0; extra == "dev"
+Requires-Dist: black>=23.0; extra == "dev"
+Requires-Dist: flake8>=6.0; extra == "dev"
+Requires-Dist: mypy>=1.0; extra == "dev"
+
 # Dorker 🔍
 
 Enterprise-grade tool for performing Google dork queries across multiple search engines.

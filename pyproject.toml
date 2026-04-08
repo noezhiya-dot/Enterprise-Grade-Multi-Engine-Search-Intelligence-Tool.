@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dorker"
+version = "1.0.0"
+description = "Enterprise-grade tool for performing Google dork queries across multiple search engines"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+keywords = ["dorking", "google-dork", "search-engine", "scraping", "information-gathering"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: System Administrators",
+    "Topic :: Security",
+    "Topic :: Internet :: WWW/HTTP",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+    "aiohttp>=3.9.0",
+    "beautifulsoup4>=4.12.0",
+    "duckduckgo-search>=4.0.0",
+    "fake-useragent>=1.4.0",
+    "rich>=13.0.0",
+    "pyyaml>=6.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0",
+    "flake8>=6.0",
+    "mypy>=1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/dorker"
+Documentation = "https://github.com/yourusername/dorker#readme"
+Repository = "https://github.com/yourusername/dorker.git"
+Issues = "https://github.com/yourusername/dorker/issues"
+
+[project.scripts]
+dorker = "dorker.cli:main"
+
+[tool.setuptools]
+packages = ["dorker", "dorker.core", "dorker.models", "dorker.utils", "dorker.engines", "dorker.output", "dorker.cli"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38']
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false

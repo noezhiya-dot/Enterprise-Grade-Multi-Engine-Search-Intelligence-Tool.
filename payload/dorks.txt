@@ -1,0 +1,7 @@
+intitle:index.of
+inurl:admin
+site:github.com password
+inurl:wp-admin
+filetype:pdf confidential
+inurl:backup
+intitle:login
